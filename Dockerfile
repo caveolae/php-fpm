@@ -26,7 +26,7 @@ RUN apk --update add \
     unzip \
     wget && \
     docker-php-ext-install bcmath mcrypt zip bz2 pdo_mysql mysqli simplexml opcache sockets mbstring pcntl xsl && \
-    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
+    docker-php-ext-configure gd --with-freetype-dir=/usr/include/freetype2 --enable-gd-native-ttf --with-jpeg-dir=/usr/include/ && \
     pecl install redis && \
     docker-php-ext-enable redis && \
     docker-php-ext-install gd && \
